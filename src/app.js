@@ -40,6 +40,14 @@ app.use(compression());
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
 
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', true);
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  next();
+});
+
 // v1 api routes
 app.use('/api/v1', routes);
 
