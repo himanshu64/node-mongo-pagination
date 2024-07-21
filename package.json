@@ -1,0 +1,49 @@
+{
+  "name": "node-mongo-pagination",
+  "version": "1.0.0",
+  "description": "REST API for node-mongo-pagination",
+  "main": "src/index.js",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "trace": "node --trace-warnings src/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.3.1",
+    "helmet": "^7.1.0",
+    "http-status": "^1.7.4",
+    "joi": "^17.13.3",
+    "moment-timezone": "^0.5.45",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "uuid": "^10.0.0",
+    "winston": "^3.13.1",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^3.1.1",
+    "prettier": "^2.2.1"
+  }
+}
