@@ -1,5 +1,4 @@
-const { User } = require("../models")
-
+const { User } = require('../models');
 
 /**
  * Query for users
@@ -11,10 +10,10 @@ const { User } = require("../models")
  * @returns {Promise<QueryResult>}
  */
 const queryUsers = async (filter, options) => {
-    const users = await User.paginate(filter, options);
-    return users;
-}
+  const users = await User.paginate(filter, options);
+  return users;
+};
 
 module.exports = {
-    queryUsers
-}
+  queryUsers,
+};

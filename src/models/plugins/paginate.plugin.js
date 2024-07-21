@@ -1,5 +1,7 @@
+/* eslint-disable no-param-reassign */
+
 const paginate = (schema) => {
-      /**
+  /**
    * @typedef {Object} QueryResult
    * @property {Document[]} results - Results found
    * @property {number} page - Current page
@@ -64,7 +66,6 @@ const paginate = (schema) => {
       return Promise.resolve(result);
     });
   };
-
-}
+};
 
 module.exports = paginate;
