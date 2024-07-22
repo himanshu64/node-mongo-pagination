@@ -8,7 +8,7 @@ const timeout = require('connect-timeout');
 const httpStatus = require('http-status');
 const config = require('./config/config');
 const morgan = require('./config/morgan');
-const corsOptions = require('./config/corsoptions');
+// const corsOptions = require('./config/corsoptions');
 const routes = require('./routes/v1');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
@@ -37,16 +37,15 @@ app.use(mongoSanitize());
 app.use(compression());
 
 // enable cors
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+app.use(cors());
+// app.options('*', cors(corsOptions));
 
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', true);
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// });
 
 // v1 api routes
 app.use('/api/v1', routes);
