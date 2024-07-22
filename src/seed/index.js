@@ -19,10 +19,10 @@ mongoose.connection.once('open', async () => {
   // Generate 200 users
   const users = [];
   // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 100000; i++) {
     users.push({
       userId: uuidv4(),
-      name: faker.person.fullName,
+      name: faker.person.fullName(),
       email: faker.internet.email(),
       avatar: faker.internet.emoji(),
     });
