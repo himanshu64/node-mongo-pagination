@@ -1,5 +1,10 @@
 const { User } = require('../models');
 
+const createUser = async (userBody) => {
+  const user = await User.create(userBody);
+  return user;
+};
+
 /**
  * Query for users
  * @param {Object} filter - Mongo filter
@@ -16,4 +21,5 @@ const queryUsers = async (filter, options) => {
 
 module.exports = {
   queryUsers,
+  createUser,
 };

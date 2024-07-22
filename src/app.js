@@ -28,6 +28,7 @@ app.use(timeout('60s'));
 
 // parse urlencoded request body
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // sanitize request data
 app.use(xss());
@@ -40,13 +41,6 @@ app.use(compression());
 app.use(cors());
 // app.options('*', cors(corsOptions));
 
-// app.use(function (req, res, next) {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   next();
-// });
-
 // v1 api routes
 app.use('/api/v1', routes);
 
@@ -56,6 +50,7 @@ app.get('/', (req, res) => {
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
+  console.log(req.url);
   next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
 });
 

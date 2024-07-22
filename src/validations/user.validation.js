@@ -8,6 +8,15 @@ const getUsers = {
   }),
 };
 
+const createUser = {
+  body: Joi.object().keys({
+    email: Joi.string().email().required(),
+    name: Joi.string().required(),
+    avatar: Joi.string(),
+  }),
+};
+
 module.exports = {
   getUsers,
+  createUser,
 };

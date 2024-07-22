@@ -16,6 +16,9 @@ const userSchema = mongoose.Schema(
       trim: true,
       lowercase: true,
     },
+    avatar: {
+      type: String,
+    },
   },
   {
     timestamps: true,
